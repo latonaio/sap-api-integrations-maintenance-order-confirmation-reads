@@ -1,0 +1,39 @@
+{
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-maintenance-order-confirmation-reads/SAP_API_Caller/caller.go#L53",
+	"function": "sap-api-integrations-maintenance-order-confirmation-reads/SAP_API_Caller.(*SAPAPICaller).Header",
+	"level": "INFO",
+	"message": [
+		{
+			"MaintOrderConf": "6316",
+			"MaintOrderConfCntrValue": "1",
+			"MaintenanceOrder": "4000000",
+			"MaintenanceOrderOperation": "0010",
+			"MaintenanceOrderSubOperation": "",
+			"PersonnelNumber": "0",
+			"ActualWorkQuantity": "2.0",
+			"ActualWorkQuantityUnit": "H",
+			"ActualDuration": "0.0",
+			"ActualDurationUnit": "",
+			"OperationConfirmedStartDate": "/Date(1498435200000)/",
+			"OperationConfirmedStartTime": "PT00H00M00S",
+			"OperationConfirmedEndDate": "/Date(1498435200000)/",
+			"OperationConfirmedEndTime": "PT10H00M16S",
+			"IsFinalConfirmation": true,
+			"NoFurtherWorkQuantityIsExpd": true,
+			"RemainingWorkQuantity": "0.0",
+			"RemainingWorkQuantityUnit": "H",
+			"PostingDate": "/Date(1498435200000)/",
+			"ActivityType": "11",
+			"OpenReservationsIsCleared": false,
+			"ConfirmationText": "",
+			"VarianceReasonCode": "",
+			"CapacityInternalID": "0",
+			"NmbrOfMaintTechnicianCapSplits": 0,
+			"MaterialDocument": "",
+			"AccountingIndicatorCode": "",
+			"ActyConfFcstdEndDate": "",
+			"ActyConfFcstdEndTime": "PT24H00M00S"
+		}
+	],
+	"time": "2021-12-26T20:42:23.701783+09:00"
+}
