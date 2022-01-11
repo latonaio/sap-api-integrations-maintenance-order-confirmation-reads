@@ -1,0 +1,1787 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Maintenance Order Operation Confirmation",
+    "version": "1 ",
+    "description": "\r\n\r\nThis synchronous inbound service enables you to create new maintenance order confirmations and cancel confirmations that are already posted. You can display and use this data, for example, in an external application. The API is based on the OData V2 protocol."
+  },
+  "externalDocs": {
+    "description": "Business Documentation",
+    "url": "https://help.sap.com/http.svc/ahp2/SAP_S4HANA_ON-PREMISE/2021.000/EN/7d/6c7de7b9234747978552d4ca44466b/frameset.htm"
+  },
+  "x-sap-api-type": "ODATA",
+  "x-sap-shortText": "Create, read, and cancel maintenance order operation confirmation using this synchronous inbound service",
+  "x-sap-api-deprecated": "No",
+  "x-sap-software-min-version": "2021",
+  "x-sap-ext-overview": [
+    {
+      "name": "Authentication Methods",
+      "values": [
+        {
+          "text": "Basic, x509",
+          "format": "plain"
+        }
+      ]
+    },
+    {
+      "name": "Business Object",
+      "values": [
+        {
+          "text": "MaintenanceOrderConfirmation",
+          "format": "plain"
+        }
+      ]
+    }
+  ],
+  "x-sap-stateInfo": {
+    "state": "active"
+  },
+  "security": [
+    {
+      "basicAuthentication": []
+    }
+  ],
+  "servers": [
+    {
+      "url": "https://{host}:{port}/sap/opu/odata/sap/API_MAINTORDERCONFIRMATION",
+      "variables": {
+        "host": {
+          "default": ""
+        },
+        "port": {
+          "default": ""
+        }
+      }
+    }
+  ],
+  "tags": [
+    {
+      "name": "Maintenance Order Confirmation"
+    },
+    {
+      "name": "Maintenance Order Confirmation Long Text"
+    }
+  ],
+  "paths": {
+    "/MaintOrderConfirmation": {
+      "get": {
+        "summary": "Get entities from MaintOrderConfirmation",
+        "tags": [
+          "Maintenance Order Confirmation"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/top"
+          },
+          {
+            "$ref": "#/components/parameters/skip"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "Filter items by property values, see [Filtering](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=64)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/count"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "Order items by property values, see [Sorting](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "enum": [
+                  "MaintOrderConf",
+                  "MaintOrderConf desc",
+                  "MaintOrderConfCntrValue",
+                  "MaintOrderConfCntrValue desc",
+                  "MaintenanceOrder",
+                  "MaintenanceOrder desc",
+                  "MaintenanceOrderOperation",
+                  "MaintenanceOrderOperation desc",
+                  "MaintenanceOrderSubOperation",
+                  "MaintenanceOrderSubOperation desc",
+                  "PersonnelNumber",
+                  "PersonnelNumber desc",
+                  "ActualWorkQuantity",
+                  "ActualWorkQuantity desc",
+                  "ActualWorkQuantityUnit",
+                  "ActualWorkQuantityUnit desc",
+                  "ActualDuration",
+                  "ActualDuration desc",
+                  "ActualDurationUnit",
+                  "ActualDurationUnit desc",
+                  "OperationConfirmedStartDate",
+                  "OperationConfirmedStartDate desc",
+                  "OperationConfirmedStartTime",
+                  "OperationConfirmedStartTime desc",
+                  "OperationConfirmedEndDate",
+                  "OperationConfirmedEndDate desc",
+                  "OperationConfirmedEndTime",
+                  "OperationConfirmedEndTime desc",
+                  "IsFinalConfirmation",
+                  "IsFinalConfirmation desc",
+                  "NoFurtherWorkQuantityIsExpd",
+                  "NoFurtherWorkQuantityIsExpd desc",
+                  "RemainingWorkQuantity",
+                  "RemainingWorkQuantity desc",
+                  "RemainingWorkQuantityUnit",
+                  "RemainingWorkQuantityUnit desc",
+                  "PostingDate",
+                  "PostingDate desc",
+                  "ActivityType",
+                  "ActivityType desc",
+                  "OpenReservationsIsCleared",
+                  "OpenReservationsIsCleared desc",
+                  "ConfirmationText",
+                  "ConfirmationText desc",
+                  "EmployeeWageType",
+                  "EmployeeWageType desc",
+                  "EmployeeWageGroup",
+                  "EmployeeWageGroup desc",
+                  "VarianceReasonCode",
+                  "VarianceReasonCode desc",
+                  "CapacityInternalID",
+                  "CapacityInternalID desc",
+                  "NmbrOfMaintTechnicianCapSplits",
+                  "NmbrOfMaintTechnicianCapSplits desc",
+                  "MaterialDocument",
+                  "MaterialDocument desc",
+                  "AccountingIndicatorCode",
+                  "AccountingIndicatorCode desc",
+                  "ActyConfFcstdEndDate",
+                  "ActyConfFcstdEndDate desc",
+                  "ActyConfFcstdEndTime",
+                  "ActyConfFcstdEndTime desc"
+                ]
+              }
+            }
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "enum": [
+                  "MaintOrderConf",
+                  "MaintOrderConfCntrValue",
+                  "MaintenanceOrder",
+                  "MaintenanceOrderOperation",
+                  "MaintenanceOrderSubOperation",
+                  "PersonnelNumber",
+                  "ActualWorkQuantity",
+                  "ActualWorkQuantityUnit",
+                  "ActualDuration",
+                  "ActualDurationUnit",
+                  "OperationConfirmedStartDate",
+                  "OperationConfirmedStartTime",
+                  "OperationConfirmedEndDate",
+                  "OperationConfirmedEndTime",
+                  "IsFinalConfirmation",
+                  "NoFurtherWorkQuantityIsExpd",
+                  "RemainingWorkQuantity",
+                  "RemainingWorkQuantityUnit",
+                  "PostingDate",
+                  "ActivityType",
+                  "OpenReservationsIsCleared",
+                  "ConfirmationText",
+                  "EmployeeWageType",
+                  "EmployeeWageGroup",
+                  "VarianceReasonCode",
+                  "CapacityInternalID",
+                  "NmbrOfMaintTechnicianCapSplits",
+                  "MaterialDocument",
+                  "AccountingIndicatorCode",
+                  "ActyConfFcstdEndDate",
+                  "ActyConfFcstdEndTime",
+                  "to_LongText"
+                ]
+              }
+            }
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "enum": [
+                  "to_LongText"
+                ]
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved entities",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Wrapper",
+                  "type": "object",
+                  "properties": {
+                    "d": {
+                      "title": "Collection of MaintOrderConfirmationType",
+                      "type": "object",
+                      "properties": {
+                        "__count": {
+                          "$ref": "#/components/schemas/count"
+                        },
+                        "results": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/cds_api_maintorderconfirmation.MaintOrderConfirmationType"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      },
+      "post": {
+        "summary": "Add new entity to MaintOrderConfirmation",
+        "tags": [
+          "Maintenance Order Confirmation"
+        ],
+        "requestBody": {
+          "required": true,
+          "description": "New entity",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/cds_api_maintorderconfirmation.MaintOrderConfirmationType-create"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "MaintOrderConfirmationType",
+                  "type": "object",
+                  "properties": {
+                    "d": {
+                      "$ref": "#/components/schemas/cds_api_maintorderconfirmation.MaintOrderConfirmationType"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/MaintOrderConfirmation(MaintOrderConf='{MaintOrderConf}',MaintOrderConfCntrValue='{MaintOrderConfCntrValue}')": {
+      "parameters": [
+        {
+          "name": "MaintOrderConf",
+          "in": "path",
+          "required": true,
+          "description": "Completion confirmation number for the operation",
+          "schema": {
+            "type": "string",
+            "maxLength": 10
+          }
+        },
+        {
+          "name": "MaintOrderConfCntrValue",
+          "in": "path",
+          "required": true,
+          "description": "Confirmation counter",
+          "schema": {
+            "type": "string",
+            "maxLength": 8
+          }
+        }
+      ],
+      "get": {
+        "summary": "Get entity from MaintOrderConfirmation by key",
+        "tags": [
+          "Maintenance Order Confirmation"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "enum": [
+                  "MaintOrderConf",
+                  "MaintOrderConfCntrValue",
+                  "MaintenanceOrder",
+                  "MaintenanceOrderOperation",
+                  "MaintenanceOrderSubOperation",
+                  "PersonnelNumber",
+                  "ActualWorkQuantity",
+                  "ActualWorkQuantityUnit",
+                  "ActualDuration",
+                  "ActualDurationUnit",
+                  "OperationConfirmedStartDate",
+                  "OperationConfirmedStartTime",
+                  "OperationConfirmedEndDate",
+                  "OperationConfirmedEndTime",
+                  "IsFinalConfirmation",
+                  "NoFurtherWorkQuantityIsExpd",
+                  "RemainingWorkQuantity",
+                  "RemainingWorkQuantityUnit",
+                  "PostingDate",
+                  "ActivityType",
+                  "OpenReservationsIsCleared",
+                  "ConfirmationText",
+                  "EmployeeWageType",
+                  "EmployeeWageGroup",
+                  "VarianceReasonCode",
+                  "CapacityInternalID",
+                  "NmbrOfMaintTechnicianCapSplits",
+                  "MaterialDocument",
+                  "AccountingIndicatorCode",
+                  "ActyConfFcstdEndDate",
+                  "ActyConfFcstdEndTime",
+                  "to_LongText"
+                ]
+              }
+            }
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "enum": [
+                  "to_LongText"
+                ]
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "MaintOrderConfirmationType",
+                  "type": "object",
+                  "properties": {
+                    "d": {
+                      "$ref": "#/components/schemas/cds_api_maintorderconfirmation.MaintOrderConfirmationType"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/MaintOrderConfirmation(MaintOrderConf='{MaintOrderConf}',MaintOrderConfCntrValue='{MaintOrderConfCntrValue}')/to_LongText": {
+      "parameters": [
+        {
+          "name": "MaintOrderConf",
+          "in": "path",
+          "required": true,
+          "description": "Completion confirmation number for the operation",
+          "schema": {
+            "type": "string",
+            "maxLength": 10
+          }
+        },
+        {
+          "name": "MaintOrderConfCntrValue",
+          "in": "path",
+          "required": true,
+          "description": "Confirmation counter",
+          "schema": {
+            "type": "string",
+            "maxLength": 8
+          }
+        }
+      ],
+      "get": {
+        "summary": "Get related to_LongText",
+        "tags": [
+          "Maintenance Order Confirmation",
+          "Maintenance Order Confirmation Long Text"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "enum": [
+                  "MaintOrderConf",
+                  "MaintOrderConfCntrValue",
+                  "MaintOrderConfLongText",
+                  "to_MaintOrderConfirmation"
+                ]
+              }
+            }
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "enum": [
+                  "to_MaintOrderConfirmation"
+                ]
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "LongTextType",
+                  "type": "object",
+                  "properties": {
+                    "d": {
+                      "$ref": "#/components/schemas/cds_api_maintorderconfirmation.LongTextType"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/LongText": {
+      "get": {
+        "summary": "Get entities from LongText",
+        "tags": [
+          "Maintenance Order Confirmation Long Text"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/top"
+          },
+          {
+            "$ref": "#/components/parameters/skip"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "Filter items by property values, see [Filtering](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=64)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/count"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "Order items by property values, see [Sorting](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "enum": [
+                  "MaintOrderConf",
+                  "MaintOrderConf desc",
+                  "MaintOrderConfCntrValue",
+                  "MaintOrderConfCntrValue desc"
+                ]
+              }
+            }
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "enum": [
+                  "MaintOrderConf",
+                  "MaintOrderConfCntrValue",
+                  "MaintOrderConfLongText",
+                  "to_MaintOrderConfirmation"
+                ]
+              }
+            }
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "enum": [
+                  "to_MaintOrderConfirmation"
+                ]
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved entities",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Wrapper",
+                  "type": "object",
+                  "properties": {
+                    "d": {
+                      "title": "Collection of LongTextType",
+                      "type": "object",
+                      "properties": {
+                        "__count": {
+                          "$ref": "#/components/schemas/count"
+                        },
+                        "results": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/cds_api_maintorderconfirmation.LongTextType"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      },
+      "post": {
+        "summary": "Add new entity to LongText",
+        "tags": [
+          "Maintenance Order Confirmation Long Text"
+        ],
+        "requestBody": {
+          "required": true,
+          "description": "New entity",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/cds_api_maintorderconfirmation.LongTextType-create"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "LongTextType",
+                  "type": "object",
+                  "properties": {
+                    "d": {
+                      "$ref": "#/components/schemas/cds_api_maintorderconfirmation.LongTextType"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/LongText(MaintOrderConf='{MaintOrderConf}',MaintOrderConfCntrValue='{MaintOrderConfCntrValue}')": {
+      "parameters": [
+        {
+          "name": "MaintOrderConf",
+          "in": "path",
+          "required": true,
+          "description": "Completion confirmation number for the operation",
+          "schema": {
+            "type": "string",
+            "maxLength": 10
+          }
+        },
+        {
+          "name": "MaintOrderConfCntrValue",
+          "in": "path",
+          "required": true,
+          "description": "Confirmation counter",
+          "schema": {
+            "type": "string",
+            "maxLength": 8
+          }
+        }
+      ],
+      "get": {
+        "summary": "Get entity from LongText by key",
+        "tags": [
+          "Maintenance Order Confirmation Long Text"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "enum": [
+                  "MaintOrderConf",
+                  "MaintOrderConfCntrValue",
+                  "MaintOrderConfLongText",
+                  "to_MaintOrderConfirmation"
+                ]
+              }
+            }
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "enum": [
+                  "to_MaintOrderConfirmation"
+                ]
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "LongTextType",
+                  "type": "object",
+                  "properties": {
+                    "d": {
+                      "$ref": "#/components/schemas/cds_api_maintorderconfirmation.LongTextType"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/LongText(MaintOrderConf='{MaintOrderConf}',MaintOrderConfCntrValue='{MaintOrderConfCntrValue}')/to_MaintOrderConfirmation": {
+      "parameters": [
+        {
+          "name": "MaintOrderConf",
+          "in": "path",
+          "required": true,
+          "description": "Completion confirmation number for the operation",
+          "schema": {
+            "type": "string",
+            "maxLength": 10
+          }
+        },
+        {
+          "name": "MaintOrderConfCntrValue",
+          "in": "path",
+          "required": true,
+          "description": "Confirmation counter",
+          "schema": {
+            "type": "string",
+            "maxLength": 8
+          }
+        }
+      ],
+      "get": {
+        "summary": "Get related to_MaintOrderConfirmation",
+        "tags": [
+          "Maintenance Order Confirmation Long Text",
+          "Maintenance Order Confirmation"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "enum": [
+                  "MaintOrderConf",
+                  "MaintOrderConfCntrValue",
+                  "MaintenanceOrder",
+                  "MaintenanceOrderOperation",
+                  "MaintenanceOrderSubOperation",
+                  "PersonnelNumber",
+                  "ActualWorkQuantity",
+                  "ActualWorkQuantityUnit",
+                  "ActualDuration",
+                  "ActualDurationUnit",
+                  "OperationConfirmedStartDate",
+                  "OperationConfirmedStartTime",
+                  "OperationConfirmedEndDate",
+                  "OperationConfirmedEndTime",
+                  "IsFinalConfirmation",
+                  "NoFurtherWorkQuantityIsExpd",
+                  "RemainingWorkQuantity",
+                  "RemainingWorkQuantityUnit",
+                  "PostingDate",
+                  "ActivityType",
+                  "OpenReservationsIsCleared",
+                  "ConfirmationText",
+                  "EmployeeWageType",
+                  "EmployeeWageGroup",
+                  "VarianceReasonCode",
+                  "CapacityInternalID",
+                  "NmbrOfMaintTechnicianCapSplits",
+                  "MaterialDocument",
+                  "AccountingIndicatorCode",
+                  "ActyConfFcstdEndDate",
+                  "ActyConfFcstdEndTime",
+                  "to_LongText"
+                ]
+              }
+            }
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "enum": [
+                  "to_LongText"
+                ]
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "MaintOrderConfirmationType",
+                  "type": "object",
+                  "properties": {
+                    "d": {
+                      "$ref": "#/components/schemas/cds_api_maintorderconfirmation.MaintOrderConfirmationType"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/CancelMaintOrderConfirmation": {
+      "post": {
+        "summary": "Invoke action CancelMaintOrderConfirmation",
+        "tags": [
+          "Maintenance Order Confirmation"
+        ],
+        "parameters": [
+          {
+            "name": "MaintOrderConf",
+            "in": "query",
+            "required": true,
+            "description": "Confirmation  \n(Value needs to be enclosed in single quotes)",
+            "schema": {
+              "type": "string",
+              "maxLength": 12,
+              "pattern": "^'[^']*(''[^']*)*'$"
+            }
+          },
+          {
+            "name": "MaintOrderConfCntrValue",
+            "in": "query",
+            "required": true,
+            "description": "Counter  \n(Value needs to be enclosed in single quotes)",
+            "schema": {
+              "type": "string",
+              "maxLength": 10,
+              "pattern": "^'[^']*(''[^']*)*'$"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "MaintOrderConfirmationType",
+                  "type": "object",
+                  "properties": {
+                    "d": {
+                      "$ref": "#/components/schemas/cds_api_maintorderconfirmation.MaintOrderConfirmationType"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/$batch": {
+      "post": {
+        "summary": "Send a group of requests",
+        "description": "Group multiple requests into a single request payload, see [Batch Requests](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=152).\n\n*Please note that \"Try it out\" is not supported for this request.*",
+        "tags": [
+          "Batch Requests"
+        ],
+        "requestBody": {
+          "required": true,
+          "description": "Batch request",
+          "content": {
+            "multipart/mixed;boundary=request-separator": {
+              "schema": {
+                "type": "string"
+              },
+              "example": "--request-separator\nContent-Type: application/http\nContent-Transfer-Encoding: binary\n\nGET MaintOrderConfirmation HTTP/1.1\nAccept: application/json\n\n\n--request-separator--"
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Batch response",
+            "content": {
+              "multipart/mixed": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "--response-separator\nContent-Type: application/http\n\nHTTP/1.1 200 OK\nContent-Type: application/json\n\n{...}\n--response-separator--"
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "basicAuthentication": {
+        "type": "http",
+        "scheme": "basic"
+      }
+    },
+    "schemas": {
+      "cds_api_maintorderconfirmation.MaintOrderConfirmationType": {
+        "type": "object",
+        "properties": {
+          "MaintOrderConf": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "Confirmation",
+            "description": "Completion confirmation number for the operation"
+          },
+          "MaintOrderConfCntrValue": {
+            "type": "string",
+            "maxLength": 8,
+            "title": "Counter",
+            "description": "Confirmation counter"
+          },
+          "MaintenanceOrder": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 12,
+            "title": "Order",
+            "description": "Order Number"
+          },
+          "MaintenanceOrderOperation": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Operation/Activity",
+            "description": "Operation/Activity Number"
+          },
+          "MaintenanceOrderSubOperation": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Operation/Activity",
+            "description": "Operation/Activity Number"
+          },
+          "PersonnelNumber": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 8,
+            "title": "Personnel number"
+          },
+          "ActualWorkQuantity": {
+            "type": "string",
+            "nullable": true,
+            "format": "decimal",
+            "multipleOf": 1.0e-1,
+            "minimum": -999999.9,
+            "maximum": 999999.9,
+            "example": "0",
+            "title": "Actual Work",
+            "description": "Actual work"
+          },
+          "ActualWorkQuantityUnit": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 3,
+            "title": "Unit for work"
+          },
+          "ActualDuration": {
+            "type": "string",
+            "nullable": true,
+            "format": "decimal",
+            "multipleOf": 1.0e-1,
+            "minimum": -9999.9,
+            "maximum": 9999.9,
+            "example": "0",
+            "title": "Actual Duration",
+            "description": "Actual Duration for Confirmation"
+          },
+          "ActualDurationUnit": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 3,
+            "title": "Unit for actual dur.",
+            "description": "Unit for actual duration"
+          },
+          "OperationConfirmedStartDate": {
+            "type": "string",
+            "nullable": true,
+            "example": "/Date(1492041600000)/",
+            "title": "Start of Execution",
+            "description": "Confirmed Start Date of Execution"
+          },
+          "OperationConfirmedStartTime": {
+            "type": "string",
+            "nullable": true,
+            "example": "PT15H51M04S",
+            "title": "Actual Start (Time)",
+            "description": "Confirmed Time for 'Start Execution'"
+          },
+          "OperationConfirmedEndDate": {
+            "type": "string",
+            "nullable": true,
+            "example": "/Date(1492041600000)/",
+            "title": "Finish Execution",
+            "description": "Confirmed Finish Date of Execution"
+          },
+          "OperationConfirmedEndTime": {
+            "type": "string",
+            "nullable": true,
+            "example": "PT15H51M04S",
+            "title": "Actual finish (time)",
+            "description": "Confirmed Time for 'Finish Execution'"
+          },
+          "IsFinalConfirmation": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Checkbox"
+          },
+          "NoFurtherWorkQuantityIsExpd": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "No Remaining Work",
+            "description": "Indicator: No Remaining Work Expected"
+          },
+          "RemainingWorkQuantity": {
+            "type": "string",
+            "nullable": true,
+            "format": "decimal",
+            "multipleOf": 1.0e-1,
+            "minimum": -999999.9,
+            "maximum": 999999.9,
+            "example": "0",
+            "title": "Remaining work"
+          },
+          "RemainingWorkQuantityUnit": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 3,
+            "title": "Unit Remaining Work",
+            "description": "Unit of Measure for Remaining Work"
+          },
+          "PostingDate": {
+            "type": "string",
+            "nullable": true,
+            "example": "/Date(1492041600000)/",
+            "title": "Posting Date"
+          },
+          "ActivityType": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 6,
+            "title": "Activity Type",
+            "description": "Activity Type for Confirmation"
+          },
+          "OpenReservationsIsCleared": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Clear Open Reservs.",
+            "description": "Clear Open Reservations"
+          },
+          "ConfirmationText": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 40,
+            "title": "Confirmation text"
+          },
+          "EmployeeWageType": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Wage type"
+          },
+          "EmployeeWageGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 3,
+            "title": "Wage Group"
+          },
+          "VarianceReasonCode": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Variance Reason",
+            "description": "Reason for Variance"
+          },
+          "CapacityInternalID": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 8,
+            "title": "Capacity ID"
+          },
+          "NmbrOfMaintTechnicianCapSplits": {
+            "type": "integer",
+            "nullable": true,
+            "format": "uint8",
+            "title": "Split number"
+          },
+          "MaterialDocument": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Material Document",
+            "description": "Number of Material Document"
+          },
+          "AccountingIndicatorCode": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "Accounting Indicator"
+          },
+          "ActyConfFcstdEndDate": {
+            "type": "string",
+            "nullable": true,
+            "example": "/Date(1492041600000)/",
+            "title": "Forecast finish date",
+            "description": "Forecast finish date of operation from confirmation"
+          },
+          "ActyConfFcstdEndTime": {
+            "type": "string",
+            "nullable": true,
+            "example": "PT15H51M04S",
+            "title": "Forecast End Time",
+            "description": "Forecast End Time of Operation from Confirmation"
+          },
+          "to_LongText": {
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/cds_api_maintorderconfirmation.LongTextType"
+              }
+            ]
+          }
+        },
+        "title": "Maintenance Order Confirmation"
+      },
+      "cds_api_maintorderconfirmation.MaintOrderConfirmationType-create": {
+        "type": "object",
+        "properties": {
+          "MaintOrderConf": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "Confirmation",
+            "description": "Completion confirmation number for the operation"
+          },
+          "MaintOrderConfCntrValue": {
+            "type": "string",
+            "maxLength": 8,
+            "title": "Counter",
+            "description": "Confirmation counter"
+          },
+          "MaintenanceOrder": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 12,
+            "title": "Order",
+            "description": "Order Number"
+          },
+          "MaintenanceOrderOperation": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Operation/Activity",
+            "description": "Operation/Activity Number"
+          },
+          "MaintenanceOrderSubOperation": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Operation/Activity",
+            "description": "Operation/Activity Number"
+          },
+          "PersonnelNumber": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 8,
+            "title": "Personnel number"
+          },
+          "ActualWorkQuantity": {
+            "type": "string",
+            "nullable": true,
+            "format": "decimal",
+            "multipleOf": 1.0e-1,
+            "minimum": -999999.9,
+            "maximum": 999999.9,
+            "example": "0",
+            "title": "Actual Work",
+            "description": "Actual work"
+          },
+          "ActualWorkQuantityUnit": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 3,
+            "title": "Unit for work"
+          },
+          "ActualDuration": {
+            "type": "string",
+            "nullable": true,
+            "format": "decimal",
+            "multipleOf": 1.0e-1,
+            "minimum": -9999.9,
+            "maximum": 9999.9,
+            "example": "0",
+            "title": "Actual Duration",
+            "description": "Actual Duration for Confirmation"
+          },
+          "ActualDurationUnit": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 3,
+            "title": "Unit for actual dur.",
+            "description": "Unit for actual duration"
+          },
+          "OperationConfirmedStartDate": {
+            "type": "string",
+            "nullable": true,
+            "example": "/Date(1492041600000)/",
+            "title": "Start of Execution",
+            "description": "Confirmed Start Date of Execution"
+          },
+          "OperationConfirmedStartTime": {
+            "type": "string",
+            "nullable": true,
+            "example": "PT15H51M04S",
+            "title": "Actual Start (Time)",
+            "description": "Confirmed Time for 'Start Execution'"
+          },
+          "OperationConfirmedEndDate": {
+            "type": "string",
+            "nullable": true,
+            "example": "/Date(1492041600000)/",
+            "title": "Finish Execution",
+            "description": "Confirmed Finish Date of Execution"
+          },
+          "OperationConfirmedEndTime": {
+            "type": "string",
+            "nullable": true,
+            "example": "PT15H51M04S",
+            "title": "Actual finish (time)",
+            "description": "Confirmed Time for 'Finish Execution'"
+          },
+          "IsFinalConfirmation": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Checkbox"
+          },
+          "NoFurtherWorkQuantityIsExpd": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "No Remaining Work",
+            "description": "Indicator: No Remaining Work Expected"
+          },
+          "RemainingWorkQuantity": {
+            "type": "string",
+            "nullable": true,
+            "format": "decimal",
+            "multipleOf": 1.0e-1,
+            "minimum": -999999.9,
+            "maximum": 999999.9,
+            "example": "0",
+            "title": "Remaining work"
+          },
+          "RemainingWorkQuantityUnit": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 3,
+            "title": "Unit Remaining Work",
+            "description": "Unit of Measure for Remaining Work"
+          },
+          "PostingDate": {
+            "type": "string",
+            "nullable": true,
+            "example": "/Date(1492041600000)/",
+            "title": "Posting Date"
+          },
+          "ActivityType": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 6,
+            "title": "Activity Type",
+            "description": "Activity Type for Confirmation"
+          },
+          "OpenReservationsIsCleared": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Clear Open Reservs.",
+            "description": "Clear Open Reservations"
+          },
+          "ConfirmationText": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 40,
+            "title": "Confirmation text"
+          },
+          "EmployeeWageType": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Wage type"
+          },
+          "EmployeeWageGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 3,
+            "title": "Wage Group"
+          },
+          "VarianceReasonCode": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Variance Reason",
+            "description": "Reason for Variance"
+          },
+          "CapacityInternalID": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 8,
+            "title": "Capacity ID"
+          },
+          "NmbrOfMaintTechnicianCapSplits": {
+            "type": "integer",
+            "nullable": true,
+            "format": "uint8",
+            "title": "Split number"
+          },
+          "MaterialDocument": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Material Document",
+            "description": "Number of Material Document"
+          },
+          "AccountingIndicatorCode": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "Accounting Indicator"
+          },
+          "ActyConfFcstdEndDate": {
+            "type": "string",
+            "nullable": true,
+            "example": "/Date(1492041600000)/",
+            "title": "Forecast finish date",
+            "description": "Forecast finish date of operation from confirmation"
+          },
+          "ActyConfFcstdEndTime": {
+            "type": "string",
+            "nullable": true,
+            "example": "PT15H51M04S",
+            "title": "Forecast End Time",
+            "description": "Forecast End Time of Operation from Confirmation"
+          },
+          "to_LongText": {
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/cds_api_maintorderconfirmation.LongTextType-create"
+              }
+            ]
+          }
+        },
+        "required": [
+          "MaintOrderConf",
+          "MaintOrderConfCntrValue"
+        ],
+        "title": "Maintenance Order Confirmation (for create)"
+      },
+      "cds_api_maintorderconfirmation.MaintOrderConfirmationType-update": {
+        "type": "object",
+        "properties": {
+          "MaintenanceOrder": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 12,
+            "title": "Order",
+            "description": "Order Number"
+          },
+          "MaintenanceOrderOperation": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Operation/Activity",
+            "description": "Operation/Activity Number"
+          },
+          "MaintenanceOrderSubOperation": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Operation/Activity",
+            "description": "Operation/Activity Number"
+          },
+          "PersonnelNumber": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 8,
+            "title": "Personnel number"
+          },
+          "ActualWorkQuantity": {
+            "type": "string",
+            "nullable": true,
+            "format": "decimal",
+            "multipleOf": 1.0e-1,
+            "minimum": -999999.9,
+            "maximum": 999999.9,
+            "example": "0",
+            "title": "Actual Work",
+            "description": "Actual work"
+          },
+          "ActualWorkQuantityUnit": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 3,
+            "title": "Unit for work"
+          },
+          "ActualDuration": {
+            "type": "string",
+            "nullable": true,
+            "format": "decimal",
+            "multipleOf": 1.0e-1,
+            "minimum": -9999.9,
+            "maximum": 9999.9,
+            "example": "0",
+            "title": "Actual Duration",
+            "description": "Actual Duration for Confirmation"
+          },
+          "ActualDurationUnit": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 3,
+            "title": "Unit for actual dur.",
+            "description": "Unit for actual duration"
+          },
+          "OperationConfirmedStartDate": {
+            "type": "string",
+            "nullable": true,
+            "example": "/Date(1492041600000)/",
+            "title": "Start of Execution",
+            "description": "Confirmed Start Date of Execution"
+          },
+          "OperationConfirmedStartTime": {
+            "type": "string",
+            "nullable": true,
+            "example": "PT15H51M04S",
+            "title": "Actual Start (Time)",
+            "description": "Confirmed Time for 'Start Execution'"
+          },
+          "OperationConfirmedEndDate": {
+            "type": "string",
+            "nullable": true,
+            "example": "/Date(1492041600000)/",
+            "title": "Finish Execution",
+            "description": "Confirmed Finish Date of Execution"
+          },
+          "OperationConfirmedEndTime": {
+            "type": "string",
+            "nullable": true,
+            "example": "PT15H51M04S",
+            "title": "Actual finish (time)",
+            "description": "Confirmed Time for 'Finish Execution'"
+          },
+          "IsFinalConfirmation": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Checkbox"
+          },
+          "NoFurtherWorkQuantityIsExpd": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "No Remaining Work",
+            "description": "Indicator: No Remaining Work Expected"
+          },
+          "RemainingWorkQuantity": {
+            "type": "string",
+            "nullable": true,
+            "format": "decimal",
+            "multipleOf": 1.0e-1,
+            "minimum": -999999.9,
+            "maximum": 999999.9,
+            "example": "0",
+            "title": "Remaining work"
+          },
+          "RemainingWorkQuantityUnit": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 3,
+            "title": "Unit Remaining Work",
+            "description": "Unit of Measure for Remaining Work"
+          },
+          "PostingDate": {
+            "type": "string",
+            "nullable": true,
+            "example": "/Date(1492041600000)/",
+            "title": "Posting Date"
+          },
+          "ActivityType": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 6,
+            "title": "Activity Type",
+            "description": "Activity Type for Confirmation"
+          },
+          "OpenReservationsIsCleared": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Clear Open Reservs.",
+            "description": "Clear Open Reservations"
+          },
+          "ConfirmationText": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 40,
+            "title": "Confirmation text"
+          },
+          "EmployeeWageType": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Wage type"
+          },
+          "EmployeeWageGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 3,
+            "title": "Wage Group"
+          },
+          "VarianceReasonCode": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Variance Reason",
+            "description": "Reason for Variance"
+          },
+          "CapacityInternalID": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 8,
+            "title": "Capacity ID"
+          },
+          "NmbrOfMaintTechnicianCapSplits": {
+            "type": "integer",
+            "nullable": true,
+            "format": "uint8",
+            "title": "Split number"
+          },
+          "MaterialDocument": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Material Document",
+            "description": "Number of Material Document"
+          },
+          "AccountingIndicatorCode": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "Accounting Indicator"
+          },
+          "ActyConfFcstdEndDate": {
+            "type": "string",
+            "nullable": true,
+            "example": "/Date(1492041600000)/",
+            "title": "Forecast finish date",
+            "description": "Forecast finish date of operation from confirmation"
+          },
+          "ActyConfFcstdEndTime": {
+            "type": "string",
+            "nullable": true,
+            "example": "PT15H51M04S",
+            "title": "Forecast End Time",
+            "description": "Forecast End Time of Operation from Confirmation"
+          }
+        },
+        "title": "Maintenance Order Confirmation (for update)"
+      },
+      "cds_api_maintorderconfirmation.LongTextType": {
+        "type": "object",
+        "properties": {
+          "MaintOrderConf": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "Confirmation",
+            "description": "Completion confirmation number for the operation"
+          },
+          "MaintOrderConfCntrValue": {
+            "type": "string",
+            "maxLength": 8,
+            "title": "Counter",
+            "description": "Confirmation counter"
+          },
+          "MaintOrderConfLongText": {
+            "type": "string",
+            "nullable": true,
+            "title": "Long Text"
+          },
+          "to_MaintOrderConfirmation": {
+            "$ref": "#/components/schemas/cds_api_maintorderconfirmation.MaintOrderConfirmationType"
+          }
+        },
+        "title": "Maintenance Order Confirmation Long Text"
+      },
+      "cds_api_maintorderconfirmation.LongTextType-create": {
+        "type": "object",
+        "properties": {
+          "MaintOrderConf": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "Confirmation",
+            "description": "Completion confirmation number for the operation"
+          },
+          "MaintOrderConfCntrValue": {
+            "type": "string",
+            "maxLength": 8,
+            "title": "Counter",
+            "description": "Confirmation counter"
+          },
+          "MaintOrderConfLongText": {
+            "type": "string",
+            "nullable": true,
+            "title": "Long Text"
+          },
+          "to_MaintOrderConfirmation": {
+            "$ref": "#/components/schemas/cds_api_maintorderconfirmation.MaintOrderConfirmationType-create"
+          }
+        },
+        "required": [
+          "MaintOrderConf",
+          "MaintOrderConfCntrValue"
+        ],
+        "title": "Maintenance Order Confirmation Long Text (for create)"
+      },
+      "cds_api_maintorderconfirmation.LongTextType-update": {
+        "type": "object",
+        "properties": {
+          "MaintOrderConfLongText": {
+            "type": "string",
+            "nullable": true,
+            "title": "Long Text"
+          }
+        },
+        "title": "Maintenance Order Confirmation Long Text (for update)"
+      },
+      "count": {
+        "type": "string",
+        "description": "The number of entities in the collection. Available when using the [$inlinecount](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=67) query option."
+      },
+      "error": {
+        "type": "object",
+        "required": [
+          "error"
+        ],
+        "properties": {
+          "error": {
+            "type": "object",
+            "required": [
+              "code",
+              "message"
+            ],
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "message": {
+                "type": "object",
+                "required": [
+                  "lang",
+                  "value"
+                ],
+                "properties": {
+                  "lang": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                }
+              },
+              "innererror": {
+                "type": "object",
+                "description": "The structure of this object is service-specific"
+              }
+            }
+          }
+        }
+      }
+    },
+    "parameters": {
+      "top": {
+        "name": "$top",
+        "in": "query",
+        "description": "Show only the first n items, see [Paging - Top](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=66)",
+        "schema": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "example": 50
+      },
+      "skip": {
+        "name": "$skip",
+        "in": "query",
+        "description": "Skip the first n items, see [Paging - Skip](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)",
+        "schema": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "count": {
+        "name": "$inlinecount",
+        "in": "query",
+        "description": "Include count of items, see [Inlinecount](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=67)",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "allpages",
+            "none"
+          ]
+        }
+      }
+    },
+    "responses": {
+      "error": {
+        "description": "Error",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/error"
+            }
+          }
+        }
+      }
+    }
+  }
+}
