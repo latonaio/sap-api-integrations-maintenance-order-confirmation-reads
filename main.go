@@ -4,7 +4,7 @@ import (
 	sap_api_caller "sap-api-integrations-maintenance-order-confirmation-reads/SAP_API_Caller"
 	"sap-api-integrations-maintenance-order-confirmation-reads/sap_api_input_reader"
 
-	"github.com/latonaio/golang-logging-library/logger"
+	"github.com/latonaio/golang-logging-library-for-sap/logger"
 )
 
 func main() {

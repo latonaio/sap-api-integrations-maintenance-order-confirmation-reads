@@ -87,9 +87,9 @@ func (c *SAPAPICaller) AsyncGetMaintenanceOrderConfirmation(maintOrderConf strin
 ```
 
 ## Output  
-本マイクロサービスでは、[golang-logging-library](https://github.com/latonaio/golang-logging-library) により、以下のようなデータがJSON形式で出力されます。  
+本マイクロサービスでは、[golang-logging-library-for-sap](https://github.com/latonaio/golang-logging-library-for-sap) により、以下のようなデータがJSON形式で出力されます。  
 以下の sample.json の例は、SAP 保全指図確認 の ヘッダデータ が取得された結果の JSON の例です。  
-以下の項目のうち、"MaintOrderConf" ～ "ActyConfFcstdEndTime" は、/SAP_API_Output_Formatter/type.go 内 の Type Header {} による出力結果です。"cursor" ～ "time"は、golang-logging-library による 定型フォーマットの出力結果です。  
+以下の項目のうち、"MaintOrderConf" ～ "ActyConfFcstdEndTime" は、/SAP_API_Output_Formatter/type.go 内 の Type Header {} による出力結果です。"cursor" ～ "time"は、golang-logging-library-for-sap による 定型フォーマットの出力結果です。  
 
 ```
 {
@@ -108,15 +108,15 @@ func (c *SAPAPICaller) AsyncGetMaintenanceOrderConfirmation(maintOrderConf strin
 			"ActualWorkQuantityUnit": "H",
 			"ActualDuration": "0.0",
 			"ActualDurationUnit": "",
-			"OperationConfirmedStartDate": "/Date(1498435200000)/",
+			"OperationConfirmedStartDate": "2017-06-26T09:00:00+09:00",
 			"OperationConfirmedStartTime": "PT00H00M00S",
-			"OperationConfirmedEndDate": "/Date(1498435200000)/",
+			"OperationConfirmedEndDate": "2017-06-26T09:00:00+09:00",
 			"OperationConfirmedEndTime": "PT10H00M16S",
 			"IsFinalConfirmation": true,
 			"NoFurtherWorkQuantityIsExpd": true,
 			"RemainingWorkQuantity": "0.0",
 			"RemainingWorkQuantityUnit": "H",
-			"PostingDate": "/Date(1498435200000)/",
+			"PostingDate": "2017-06-26T09:00:00+09:00",
 			"ActivityType": "11",
 			"OpenReservationsIsCleared": false,
 			"ConfirmationText": "",
@@ -129,6 +129,6 @@ func (c *SAPAPICaller) AsyncGetMaintenanceOrderConfirmation(maintOrderConf strin
 			"ActyConfFcstdEndTime": "PT24H00M00S"
 		}
 	],
-	"time": "2021-12-26T20:42:23.701783+09:00"
+	"time": "2022-01-28T17:34:59+09:00"
 }
 ```
